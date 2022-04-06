@@ -11,7 +11,10 @@
   }
 
 #container {
-    background-color: grey;
+    background-image: url(./img/background.jpg);
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    /* background-color: grey; */
 }
 
 #homePageContent, #menuPageContent, #contactPageContent, #allTabs {
@@ -25,12 +28,16 @@
     display: none;
 }
 
-#homePageContent, #menuPageContent {
-    padding-bottom: 10vh;
+#homePageContent {
+    padding-bottom: 12vh;
+}
+
+#menuPageContent {
+    padding-bottom: 15vh;
 }
 
 #contactPageContent {
-    padding-bottom: 17vh;
+    padding-bottom: 20vh;
 }
 
 /* Header styling */
