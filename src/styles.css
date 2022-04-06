@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('./garamond.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+
+#container {
+    background-color: grey;
+}
+
+#homePageContent, #menuPageContent, #contactPageContent, #allTabs {
+    background-color: lightgray;
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#menuPageContent, #contactPageContent {
+    display: none;
+}
+
+#homePageContent, #menuPageContent {
+    padding-bottom: 10vh;
+}
+
+#contactPageContent {
+    padding-bottom: 17vh;
+}
+
+/* Header styling */
+#headerElement {
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url('./img/headerImg.jpg');
+    background-size: cover;
+    height: 25vh;
+    width: 70vw;
+}
+
+.header {
+    text-align: center;
+    font-family: 'myFont';
+    font-size: xx-large;
+    font-weight: 900;
+    color: black;
+    padding-top: 2rem;
+}
+
+.subheader {
+    font-size: x-large;
+}
+
+/* Tab Styling */
+.tab {
+    background-color: #ddd;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-family: 'myFont';
+    font-size: large;
+}
+
+.tabBar {
+    background-color: #ddd;
+}
+
+.home {
+    margin-left: 27vw;
+}
+
+/* Change background color of buttons on hover */
+button:hover {
+    background-color: rgb(167, 167, 167);
+}
+
+/* Create an active/current tablink class */
+.activeTab {
+    background-color: lightgrey;
+}
+
+/* Home page main content */
+.homePageContent, .menuPageContent {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    font-family: 'myFont';
+    text-align: center;
+}
+
+.homePageContent {
+    padding-top: 5vh;
+}
+
+.homePageHeader {
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+    padding-left: 10vh;
+    padding-right: 10vh;
+}
+
+.imageHolder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    padding-top: 2rem;
+}
+
+.chefImg, .sifImg, .ratImg, .snakeImg {
+    padding-top: 1rem;
+    align-self: center;
+    height: 30vh;
+    width: auto;
+    border-radius: 50%;
+}
+
+.chefImgCaption, .sifImgCaption {
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+}
+
+.sifImgCaption {
+    padding-top: 1rem;
+}
+
+/* Menu Page Main Content */
+.menuPageContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.ratHolder, .snakeHolder, .dungHolder, .chickenHolder, .flaskHolder {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    padding-left: 6rem;
+}
+
+.ratImg, .snakeImg, .dungImg, .chickenImg, .flaskImg {
+    height: 6rem;
+}
+
+.ratImg {
+    padding-left: 1rem;
+}
+
+.ratImgCaption {
+    padding-top: 2rem;
+    padding-left: 4rem;
+}
+
+.snakeImg {
+    padding-left: 5rem;
+}
+
+.snakeImgCaption {
+    padding-top: 2rem;
+    padding-left: 6rem;
+    padding-right: 1rem;
+}
+
+.dungImg {
+    padding-top: 1rem;
+    padding-left: 4rem;
+}
+
+.dungImgCaption {
+    padding-top: 1rem;
+    padding-left: 12rem;
+    padding-right: 8rem;
+}
+
+.chickenImg {
+    padding-top: 1rem;
+    border-radius: 10%;
+}
+
+.chickenImgCaption {
+    padding-top: 2rem;
+    padding-left: 5rem;
+}
+
+.flaskImg {
+    padding-top: 1rem;
+    padding-right: 9rem;
+    padding-left: 2rem;
+}
+
+.flaskImgCaption {
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 4rem;
+}
+
+/* Contact Page Styling */
+.contactPageContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 6rem;
+}
+
+.gwynHolder {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-content: center;
+ text-align: center;
+}
+
+.gwynImgCaption {
+    font-size: x-large;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.gwynImg {
+    height: 30vh;
+    align-self: center;
+}
+
+.contactInfoHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 4rem;
+}
+
+.contactInfo {
+    font-size: large;
+    font-weight: bolder;
+    padding-top: 6rem;
+    padding-right: 2rem;
+}
