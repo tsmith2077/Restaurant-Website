@@ -9,51 +9,6 @@ import Chicken from './img/chicken.jpg';
 import Flask from './img/flask.jpg';
 import Gwyn from './img/gwyn.jpg';
 
-// Event handler for tabs
-function selectHomeTab() {
-    homePageContent.style.cssText = "display: flex;"
-    menuPageContent.style.cssText = "display: none;"
-    contactPageContent.style.cssText = "display: none;"
-
-    const allTabBtns = document.querySelectorAll('.tab');
-    allTabBtns.forEach(tab => {
-        if (!tab.classList.contains('home')) {
-            tab.classList.remove('activeTab');
-        } else {
-            tab.classList.add('activeTab');
-        }
-})
-};
-
-function selectMenuTab() {
-    homePageContent.style.cssText = "display: none;"
-    menuPageContent.style.cssText = "display: flex;"
-    contactPageContent.style.cssText = "display: none;"
-
-    const allTabBtns = document.querySelectorAll('.tab');
-    allTabBtns.forEach(tab => {
-        if (!tab.classList.contains('menu')) {
-            tab.classList.remove('activeTab');
-        } else {
-            tab.classList.add('activeTab');
-        }
-})
-};
-
-function selectContactTab() {
-    homePageContent.style.cssText = "display: none;"
-    menuPageContent.style.cssText = "display: none;"
-    contactPageContent.style.cssText = "display: flex;"
-
-    const allTabBtns = document.querySelectorAll('.tab');
-    allTabBtns.forEach(tab => {
-        if (!tab.classList.contains('contact')) {
-            tab.classList.remove('activeTab');
-        } else {
-            tab.classList.add('activeTab');
-        }
-})
-};
 
 const container = document.createElement("body");
 container.id = 'container';
@@ -89,22 +44,16 @@ function displayTabs() {
     const homeTab = document.createElement('button');
     homeTab.textContent = "Home";
     homeTab.classList.add('tab', 'home', 'activeTab');
-    homeTab.setAttribute("role", "tab")
-    homeTab.onclick = selectHomeTab;
     mainContent.appendChild(homeTab);
 
     const menuTab = document.createElement('button');
     menuTab.textContent = "Menu";
     menuTab.classList.add('tab', 'menu');
-    menuTab.setAttribute("role", "tab")
-    menuTab.onclick = selectMenuTab;
     mainContent.appendChild(menuTab);
 
     const contactTab = document.createElement('button');
     contactTab.textContent = "Contact Us";
     contactTab.classList.add('tab', 'contact');
-    contactTab.setAttribute("role", 'tab')
-    contactTab.onclick = selectContactTab;
     mainContent.appendChild(contactTab);
 
 
@@ -160,6 +109,7 @@ function displayHomePage() {
 
 const homePageContent = document.createElement('div');
 homePageContent.id = 'homePageContent';
+homePageContent.classList.add('pageContent');
 container.appendChild(homePageContent);
 homePageContent.appendChild(displayHomePage());
 
@@ -259,13 +209,14 @@ function displayMenuPage() {
 
 const menuPageContent = document.createElement('div');
 menuPageContent.id = 'menuPageContent';
+menuPageContent.classList.add('pageContent');
 container.appendChild(menuPageContent);
 menuPageContent.appendChild(displayMenuPage());
 
 // Contact Us Content
 function displayContactPage() {
     const contactPageContent = document.createElement('div');
-    contactPageContent.classList.add('contactPageContent');
+    contactPageContent.classList.add('contactPageContent', 'contentPage');
 
     // Gwyn manager display
     const gwynHolder = document.createElement('div');
@@ -303,5 +254,36 @@ function displayContactPage() {
 
 const contactPageContent = document.createElement('div');
 contactPageContent.id = 'contactPageContent';
+contactPageContent.classList.add('pageContent');
 container.appendChild(contactPageContent);
 contactPageContent.appendChild(displayContactPage());
+
+
+// Event Listener for tabs displaying page content
+const allContentPages = document.querySelectorAll('.pageContent')
+const allTabBtns = document.querySelectorAll('.tab');
+
+allTabBtns.forEach(tab => {
+    tab.addEventListener('click', event => {
+        // Removes the activeTab class from all tabs
+        for (var i = 0; i < allTabBtns.length; i++) {
+            allTabBtns[i].classList.remove('activeTab')
+        }
+        // Hides all the pageContent except for header and tabs
+        for (var i = 0; i < allContentPages.length; i++) {
+            allContentPages[i].style.cssText = "display: none;"
+        }
+        // Adds styling to the selected tab
+        if (event.target) {
+            tab.classList.add('activeTab');
+        }
+        // Displays the selected pageContent
+        if (event.target.classList.contains('home')) {
+            homePageContent.style.cssText = "display: flex;"
+        } else if (event.target.classList.contains('menu')) {
+            menuPageContent.style.cssText = "display: flex;"
+        } else if (event.target.classList.contains('contact')) {
+            contactPageContent.style.cssText = "display: flex;"
+        }
+    })
+});
