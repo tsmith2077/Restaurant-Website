@@ -86,4 +86,8 @@ lerna-debug.log
 
 # System Files
 .DS_Store
+<<<<<<< HEAD
 Thumbs.db
+=======
+Thumbs.db
+>>>>>>> 9057538aa9985ae7a1202f0016fbdba54b176c08
