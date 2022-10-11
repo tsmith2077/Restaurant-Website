@@ -2,14 +2,18 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
   entry: {
     index: './src/index.js',
-    // tabs: './src/tabs.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Development',
+      title: 'Dark Souls Eats',
     }),
   ],
   output: {
